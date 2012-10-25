@@ -33,23 +33,24 @@ public class Mainapplication extends Application {
 		return router;
 	}
 
-	private void hibernateHandling(final Router router, final String urlMapped, final Class clazz) {
+	private void hibernateHandling(final Router router, final String urlMapped, final Class laClasseAttachee) {
 
 		final HandlerHibernate hibernateHandler = new HandlerHibernate(
 				getContext());
 
-		hibernateHandler.setNext(clazz);
+		hibernateHandler.setNext(laClasseAttachee);
 
 		router.attach(urlMapped, hibernateHandler);
 	}
 
 	private void attachRessources(final Router router) {
-		final File dir = new File("src/main/resources/webResources/");
-		final String files[] = dir.list();
+		final String tousLesFichiers[] = new File("src/main/resources/webResources/").list();
 
-		for (final String t : files) {
-			router.attach("/resources/" + t, new Directory(getContext(),
-					"clap://system/webResources/" + t));
-		}
+        if (tousLesFichiers != null) {
+            for (final String unFichier : tousLesFichiers) {
+                router.attach("/resources/" + unFichier, new Directory(getContext(),
+                        "clap://system/webResources/" + unFichier));
+            }
+        }
 	}
 }

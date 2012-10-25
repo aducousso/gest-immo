@@ -7,6 +7,6 @@ public class MainLauncher {
 
 	public static void main(final String[] args) throws Exception {
 		new HTTPUtil(new Mainapplication(), 8081);
-		new HSQLDBUtil("database-cvtheque", 8082);
+		new HSQLDBUtil("database", 8082);
 	}
 }
