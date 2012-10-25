@@ -18,10 +18,6 @@ public class HandlerHibernate extends Filter {
 		super(context);
 	}
 
-	public void setNextReslet(final Class<?> clazz, final String chemin) {
-		setNext(clazz);
-	}
-
 	@Override
 	protected int beforeHandle(final Request request, final Response response) {
 		session = HibernateUtil.getSessionFactory().getCurrentSession();

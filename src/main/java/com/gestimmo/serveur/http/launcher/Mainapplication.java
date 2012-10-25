@@ -33,13 +33,13 @@ public class Mainapplication extends Application {
 		return router;
 	}
 
-	private void hibernateHandling(final Router router, final String urlMapped,
-			final Class<?> clazz) {
+	private void hibernateHandling(final Router router, final String urlMapped, final Class clazz) {
 
 		final HandlerHibernate hibernateHandler = new HandlerHibernate(
 				getContext());
 
 		hibernateHandler.setNext(clazz);
+
 		router.attach(urlMapped, hibernateHandler);
 	}
 
