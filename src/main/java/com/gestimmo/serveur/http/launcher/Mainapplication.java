@@ -26,7 +26,7 @@ public class Mainapplication extends Application {
 
 		attachRessources(router);
 
-		//router.attachDefault(DefaultResource.class);
+		router.attachDefault(DefaultResource.class);
 
 		//hibernateHandling(router, "/connex", ConnexionRessource.class);
 
@@ -48,6 +48,7 @@ public class Mainapplication extends Application {
 
         if (tousLesFichiers != null) {
             for (final String unFichier : tousLesFichiers) {
+                System.out.println(unFichier);
                 router.attach("/resources/" + unFichier, new Directory(getContext(),
                         "clap://system/webResources/" + unFichier));
             }

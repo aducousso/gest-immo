@@ -26,8 +26,7 @@ public class DefaultResource extends ServerResource {
 			title = "Accueil";
 		}
 
-		// System.out.println("File: " + file);
-		return TemplateRepresentation.createNew(file + ".tpl", getContext())
+		return TemplateRepresentation.createNew(file + ".html", getContext())
 				.with("pageTitle", title);
 	}
 }
