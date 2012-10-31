@@ -4,10 +4,12 @@ import com.gestimmo.serveur.http.resources.*;
 import freemarker.template.Configuration;
 import org.restlet.Application;
 import org.restlet.Restlet;
+import org.restlet.data.Reference;
 import org.restlet.resource.Directory;
 import org.restlet.routing.Router;
 
 import java.io.File;
+import java.net.URL;
 
 public class Mainapplication extends Application {
 
@@ -44,14 +46,8 @@ public class Mainapplication extends Application {
 	}
 
 	private void attachRessources(final Router router) {
-		final String tousLesFichiers[] = new File("src/main/resources/webResources/").list();
-
-        if (tousLesFichiers != null) {
-            for (final String unFichier : tousLesFichiers) {
-                System.out.println(unFichier);
-                router.attach("/resources/" + unFichier, new Directory(getContext(),
-                        "clap://system/webResources/" + unFichier));
-            }
-        }
+        router.attach("/images", new Directory(getContext(), new Reference("clap://system/webRessources/images")));
+        router.attach("/js", new Directory(getContext(), new Reference("clap://system/webRessources/js")));
+        router.attach("/styles", new Directory(getContext(), new Reference("clap://system/webRessources/styles")));
 	}
 }

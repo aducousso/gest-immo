@@ -16,8 +16,7 @@ public class DefaultResource extends ServerResource {
 		final String pageReference = getReference().getRemainingPart()
 				.substring(1);
 
-		if (new File("src/main/resources/webPages/static/" + pageReference
-				+ ".tpl").exists()) {
+		if (new File("src/main/resources/webPages/static/" + pageReference + ".tpl").exists()) {
 			file = "static/" + getReference().getRemainingPart().substring(1);
 			title = pageReference.substring(0, 1).toUpperCase()
 					+ pageReference.substring(1).toLowerCase();
@@ -26,7 +25,6 @@ public class DefaultResource extends ServerResource {
 			title = "Accueil";
 		}
 
-		return TemplateRepresentation.createNew(file + ".html", getContext())
-				.with("pageTitle", title);
+		return TemplateRepresentation.createNew(file + ".tpl", getContext()).with("pageTitle", title);
 	}
 }

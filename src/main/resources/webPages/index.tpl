@@ -5,17 +5,17 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>Nouvelle page</title>
+        <title>${pageTitle}</title>
 
         <link rel="stylesheet" href="styles/master.css">
 
         <!--[if lt IE 9]>
-        <script src="js/html5shiv.js"></script>
+        <script src="/js/html5shiv.js"></script>
         <![endif]-->
 
-        <script src="js/jquery-1.8.2.min.js"></script>
-        <script src="js/plugin.js"></script>
-        <script src="js/main.js"></script>
+        <script src="/js/jquery-1.8.2.min.js"></script>
+        <script src="/js/plugins.js"></script>
+        <script src="/js/main.js"></script>
     </head>
 
     <body>
