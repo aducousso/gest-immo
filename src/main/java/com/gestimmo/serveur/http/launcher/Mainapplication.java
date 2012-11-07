@@ -1,15 +1,13 @@
 package com.gestimmo.serveur.http.launcher;
 
-import com.gestimmo.serveur.http.resources.*;
+import com.gestimmo.serveur.http.resources.DefaultResource;
+import com.gestimmo.serveur.http.resources.HandlerHibernate;
 import freemarker.template.Configuration;
 import org.restlet.Application;
 import org.restlet.Restlet;
 import org.restlet.data.Reference;
 import org.restlet.resource.Directory;
 import org.restlet.routing.Router;
-
-import java.io.File;
-import java.net.URL;
 
 public class Mainapplication extends Application {
 
