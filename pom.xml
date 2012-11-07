@@ -16,7 +16,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.gestimmo.serveur.http.launcher.MainLauncher</mainClass>
+                            <mainClass>com.gestimmo.serveur.launcher.MainLauncher</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

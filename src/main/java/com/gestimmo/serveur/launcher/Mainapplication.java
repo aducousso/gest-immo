@@ -1,7 +1,7 @@
-package com.gestimmo.serveur.http.launcher;
+package com.gestimmo.serveur.launcher;
 
-import com.gestimmo.serveur.http.resources.DefaultResource;
-import com.gestimmo.serveur.http.resources.HandlerHibernate;
+import com.gestimmo.serveur.resources.DefaultResource;
+import com.gestimmo.serveur.resources.HandlerHibernate;
 import freemarker.template.Configuration;
 import org.restlet.Application;
 import org.restlet.Restlet;

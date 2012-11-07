@@ -1,7 +1,7 @@
 package com.gestimmo.metier.dao;
 
 import com.gestimmo.metier.dao.exceptions.DataException;
-import com.gestimmo.serveur.http.processes.HibernateUtil;
+import com.gestimmo.serveur.processes.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;

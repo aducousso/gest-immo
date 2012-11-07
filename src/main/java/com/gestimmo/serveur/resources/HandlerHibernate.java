@@ -1,7 +1,7 @@
-package com.gestimmo.serveur.http.resources;
+package com.gestimmo.serveur.resources;
 
 import com.gestimmo.metier.dao.exceptions.DataException;
-import com.gestimmo.serveur.http.processes.HibernateUtil;
+import com.gestimmo.serveur.processes.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.restlet.Context;

@@ -1,7 +1,7 @@
-package com.gestimmo.serveur.http.launcher;
+package com.gestimmo.serveur.launcher;
 
-import com.gestimmo.serveur.http.processes.HSQLDBUtil;
-import com.gestimmo.serveur.http.processes.HTTPUtil;
+import com.gestimmo.serveur.processes.HSQLDBUtil;
+import com.gestimmo.serveur.processes.HTTPUtil;
 
 public class MainLauncher {
 

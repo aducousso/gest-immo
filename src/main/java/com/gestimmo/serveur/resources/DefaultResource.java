@@ -1,6 +1,6 @@
-package com.gestimmo.serveur.http.resources;
+package com.gestimmo.serveur.resources;
 
-import com.gestimmo.serveur.http.processes.TemplateRepresentation;
+import com.gestimmo.serveur.processes.TemplateRepresentation;
 import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;

@@ -1,4 +1,4 @@
-package com.gestimmo.serveur.http.processes;
+package com.gestimmo.serveur.processes;
 
 import com.google.common.collect.Maps;
 import freemarker.template.Configuration;

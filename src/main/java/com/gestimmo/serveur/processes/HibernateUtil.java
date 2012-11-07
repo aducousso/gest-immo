@@ -1,4 +1,4 @@
-package com.gestimmo.serveur.http.processes;
+package com.gestimmo.serveur.processes;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

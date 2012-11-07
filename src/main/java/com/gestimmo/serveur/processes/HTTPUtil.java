@@ -1,4 +1,4 @@
-package com.gestimmo.serveur.http.processes;
+package com.gestimmo.serveur.processes;
 
 import org.restlet.Application;
 import org.restlet.Component;
