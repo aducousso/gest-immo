@@ -11,28 +11,28 @@ import org.restlet.routing.Filter;
 
 public class HandlerHibernate extends Filter {
 
-    Session session;
-    Transaction transactionEncours;
+	Session session;
+	Transaction transactionEncours;
 
-    public HandlerHibernate(final Context context) {
-        super(context);
-    }
+	public HandlerHibernate(final Context context) {
+		super(context);
+	}
 
-    @Override
-    protected int beforeHandle(final Request request, final Response response) {
-        session = HibernateUtil.getSessionFactory().getCurrentSession();
-        transactionEncours = session.beginTransaction();
+	@Override
+	protected int beforeHandle(final Request request, final Response response) {
+		session = HibernateUtil.getSessionFactory().getCurrentSession();
+		transactionEncours = session.beginTransaction();
 
-        return CONTINUE;
-    }
+		return CONTINUE;
+	}
 
-    @Override
-    protected void afterHandle(final Request request, final Response response) {
-        try {
-            transactionEncours.commit();
-        } catch (final DataException e) {
-            System.out.println(e);
-            transactionEncours.rollback();
-        }
-    }
+	@Override
+	protected void afterHandle(final Request request, final Response response) {
+		try {
+			transactionEncours.commit();
+		} catch (final DataException e) {
+			System.out.println(e);
+			transactionEncours.rollback();
+		}
+	}
 }

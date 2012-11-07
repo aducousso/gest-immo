@@ -9,21 +9,20 @@ import java.io.File;
 
 public class DefaultResource extends ServerResource {
 
-    @Get
-    public Representation reprente() {
-        String file;
-        String title;
-        final String pageReference = getReference().getRemainingPart().substring(1);
+	@Get
+	public Representation reprente() {
+		String file;
+		String title;
+		final String pageReference = getReference().getRemainingPart().substring(1);
 
-        if (new File("src/main/resources/webPages/statique/" + pageReference + ".ftl").exists()) {
-            file = "statique/" + pageReference;
-            title = pageReference.substring(0, 1).toUpperCase()
-                    + pageReference.substring(1).toLowerCase();
-        } else {
-            file = "index";
-            title = "Accueil";
-        }
+		if (new File("src/main/resources/webPages/statique/" + pageReference + ".ftl").exists()) {
+			file = "statique/" + pageReference;
+			title = pageReference.substring(0, 1).toUpperCase() + pageReference.substring(1).toLowerCase();
+		} else {
+			file = "index";
+			title = "Accueil";
+		}
 
-        return TemplateRepresentation.createNew(file + ".ftl", getContext()).with("pageTitle", title);
-    }
+		return TemplateRepresentation.createNew(file + ".ftl", getContext()).with("pageTitle", title);
+	}
 }
