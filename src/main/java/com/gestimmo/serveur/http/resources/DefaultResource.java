@@ -13,11 +13,10 @@ public class DefaultResource extends ServerResource {
 	public Representation reprente() {
 		String file;
 		String title;
-		final String pageReference = getReference().getRemainingPart()
-				.substring(1);
+		final String pageReference = getReference().getRemainingPart().substring(1);
 
-		if (new File("src/main/resources/webPages/static/" + pageReference + ".ftl").exists()) {
-			file = "statique/" + getReference().getRemainingPart().substring(1);
+		if (new File("src/main/resources/webPages/statique/" + pageReference + ".ftl").exists()) {
+			file = "statique/" + pageReference;
 			title = pageReference.substring(0, 1).toUpperCase()
 					+ pageReference.substring(1).toLowerCase();
 		} else {
