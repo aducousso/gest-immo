@@ -11,41 +11,41 @@ import org.restlet.routing.Router;
 
 public class Mainapplication extends Application {
 
-	@Override
-	public synchronized void start() throws Exception {
-		super.start();
-		final Configuration configuration = new Configuration();
-		configuration.setClassForTemplateLoading(getClass(), "/webPages");
-		getContext().getAttributes().put("org.freemarker.Configuration",
-				configuration);
-	}
+    @Override
+    public synchronized void start() throws Exception {
+        super.start();
+        final Configuration configuration = new Configuration();
+        configuration.setClassForTemplateLoading(getClass(), "/webPages");
+        getContext().getAttributes().put("org.freemarker.Configuration",
+                configuration);
+    }
 
-	@Override
-	public synchronized Restlet createInboundRoot() {
-		final Router router = new Router(getContext());
+    @Override
+    public synchronized Restlet createInboundRoot() {
+        final Router router = new Router(getContext());
 
-		attachRessources(router);
+        attachRessources(router);
 
-		router.attachDefault(DefaultResource.class);
+        router.attachDefault(DefaultResource.class);
 
-		//hibernateHandling(router, "/connex", ConnexionRessource.class);
+        //hibernateHandling(router, "/connex", ConnexionRessource.class);
 
-		return router;
-	}
+        return router;
+    }
 
-	private void hibernateHandling(final Router router, final String urlMapped, final Class laClasseAttachee) {
+    private void hibernateHandling(final Router router, final String urlMapped, final Class laClasseAttachee) {
 
-		final HandlerHibernate hibernateHandler = new HandlerHibernate(
-				getContext());
+        final HandlerHibernate hibernateHandler = new HandlerHibernate(
+                getContext());
 
-		hibernateHandler.setNext(laClasseAttachee);
+        hibernateHandler.setNext(laClasseAttachee);
 
-		router.attach(urlMapped, hibernateHandler);
-	}
+        router.attach(urlMapped, hibernateHandler);
+    }
 
-	private void attachRessources(final Router router) {
+    private void attachRessources(final Router router) {
         router.attach("/images", new Directory(getContext(), new Reference("clap://system/webRessources/images")));
         router.attach("/js", new Directory(getContext(), new Reference("clap://system/webRessources/js")));
         router.attach("/styles", new Directory(getContext(), new Reference("clap://system/webRessources/styles")));
-	}
+    }
 }

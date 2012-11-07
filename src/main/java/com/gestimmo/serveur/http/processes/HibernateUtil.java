@@ -7,51 +7,51 @@ import org.hibernate.service.ServiceRegistryBuilder;
 
 public class HibernateUtil {
 
-	private static HibernateUtil instance = null;
-	private static SessionFactory sessionFactory = null;
+    private static HibernateUtil instance = null;
+    private static SessionFactory sessionFactory = null;
 
-	private static Integer portNumber;
-	private static String dbName;
+    private static Integer portNumber;
+    private static String dbName;
 
-	public static HibernateUtil getInstance() {
-		if (instance == null) {
-			instance = new HibernateUtil();
-		}
+    public static HibernateUtil getInstance() {
+        if (instance == null) {
+            instance = new HibernateUtil();
+        }
 
-		return instance;
-	}
+        return instance;
+    }
 
-	public static SessionFactory getSessionFactory() {
-		if (sessionFactory == null) {
-			sessionFactory = buildSessionFactory();
-		}
-		return sessionFactory;
-	}
+    public static SessionFactory getSessionFactory() {
+        if (sessionFactory == null) {
+            sessionFactory = buildSessionFactory();
+        }
+        return sessionFactory;
+    }
 
-	private static SessionFactory buildSessionFactory() {
-		try {
-			final Configuration config = new Configuration();
-			config.configure("hibernate.cfg.xml");
-			config.setProperty("hibernate.connection.url",
-					"jdbc:hsqldb:hsql://localhost:" + portNumber + "/" + dbName);
+    private static SessionFactory buildSessionFactory() {
+        try {
+            final Configuration config = new Configuration();
+            config.configure("hibernate.cfg.xml");
+            config.setProperty("hibernate.connection.url",
+                    "jdbc:hsqldb:hsql://localhost:" + portNumber + "/" + dbName);
 
-			final ServiceRegistry serviceRegistry = new ServiceRegistryBuilder()
-					.applySettings(config.getProperties())
-					.buildServiceRegistry();
+            final ServiceRegistry serviceRegistry = new ServiceRegistryBuilder()
+                    .applySettings(config.getProperties())
+                    .buildServiceRegistry();
 
-			return config.buildSessionFactory(serviceRegistry);
+            return config.buildSessionFactory(serviceRegistry);
 
-		} catch (final Throwable ex) {
-			System.err.println("Initial SessionFactory creation failed." + ex);
-			throw new ExceptionInInitializerError(ex);
-		}
-	}
+        } catch (final Throwable ex) {
+            System.err.println("Initial SessionFactory creation failed." + ex);
+            throw new ExceptionInInitializerError(ex);
+        }
+    }
 
-	public void setPort(final Integer port) {
-		portNumber = port;
-	}
+    public void setPort(final Integer port) {
+        portNumber = port;
+    }
 
-	public void setDbName(final String db) {
-		dbName = db;
-	}
+    public void setDbName(final String db) {
+        dbName = db;
+    }
 }
