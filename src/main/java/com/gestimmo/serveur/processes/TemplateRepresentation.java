@@ -23,6 +23,10 @@ public class TemplateRepresentation extends OutputRepresentation {
 		return new TemplateRepresentation(template, context, type);
 	}
 
+	public static Boolean templateExiste(String templateName, Context t) {
+		return org.restlet.ext.freemarker.TemplateRepresentation.getTemplate((Configuration) t.getAttributes().get("org.freemarker.Configuration"), templateName) != null;
+	}
+
 	public TemplateRepresentation(final String template, final Context context, final MediaType type) {
 		super(type);
 		this.context = context;
