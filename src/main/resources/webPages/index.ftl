@@ -1,5 +1,5 @@
-<#include "include/header.ftl">
+<#include "/include/header.ftl">
 
 <p>Hello world!</p>
 
-<#include "include/footer.ftl">
+<#include "/include/footer.ftl">
