@@ -1,4 +1,4 @@
-package test.metier;
+package metier;
 
 import com.gestimmo.metier.model.Bien;
 import junit.framework.TestCase;
