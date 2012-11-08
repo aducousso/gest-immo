@@ -1,5 +1,6 @@
 package com.gestimmo.serveur.launcher;
 
+import com.gestimmo.serveur.resources.BienResource;
 import com.gestimmo.serveur.resources.DefaultResource;
 import com.gestimmo.serveur.resources.HandlerHibernate;
 import freemarker.template.Configuration;
@@ -26,7 +27,7 @@ public class Mainapplication extends Application {
 		attachRessources(router);
 
 		router.attachDefault(DefaultResource.class);
-
+		router.attach("/bien", BienResource.class);
 		//hibernateHandling(router, "/connex", ConnexionRessource.class);
 
 		return router;
