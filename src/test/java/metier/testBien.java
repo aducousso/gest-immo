@@ -1,5 +1,14 @@
 package metier;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.MatcherAssert.assertThat;
+
+import java.util.GregorianCalendar;
+
+import org.hamcrest.collection.IsIn;
+import org.hamcrest.number.IsGreaterThan;
+
 import com.gestimmo.metier.model.Bien;
 import junit.framework.TestCase;
 
@@ -13,11 +22,41 @@ public class testBien extends TestCase {
 	public void testObjetExiste() {
 		assertNotNull(unBien);
 	}
+	
 	public void testSurface (){
-
+	  unBien.setSurface(40.00);
+	  assertThat(unBien.getSurface(), is(40.00));
 	}
-
-	public void testOuiii() {
-		assertTrue(true);
+	
+	public void testEnergie(){
+		unBien.setEnergie('A');
+		assertThat(unBien.getEnergie(), is('A'));
+	}
+	
+	public void testAdresse(){
+		unBien.setAdresse("adresse");
+		assertThat(unBien.getAdresse(), is("adresse"));
+	}
+	
+	public void testCodePostale(){
+		unBien.setCodePostale("64600");
+		assertThat(unBien.getCodePostale(), is("64600"));
+	}
+	
+	public void testVille(){
+		unBien.setVille("AngletCityBitch");
+		assertThat(unBien.getVille(), is("AngletCityBitch"));
+	}
+	
+	public void testNbPieces(){
+		unBien.setNbPieces(1);
+		assertThat(unBien.getNbPieces(), is(1));
+	}
+	
+	public void testNbPiecesPas0(){
+		unBien.setNbPieces(1);
+		assertThat(unBien.getNbPieces(), matcher)
 	}
 }
+
+	
