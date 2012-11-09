@@ -3,7 +3,7 @@ package metier;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-import com.gestimmo.metier.exceptions.AppDataException;
+import com.gestimmo.metier.exceptions.AppliDataException;
 
 import com.gestimmo.metier.model.Bien;
 import junit.framework.TestCase;
@@ -58,7 +58,7 @@ public class testBien extends TestCase {
 		try {
 			unBien.setNbPieces(0);
 			fail("Impossible");
-		} catch (AppDataException e) {
+		} catch (AppliDataException e) {
 		}
 	}
 }

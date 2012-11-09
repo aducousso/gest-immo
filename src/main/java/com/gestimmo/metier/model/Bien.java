@@ -1,6 +1,6 @@
 package com.gestimmo.metier.model;
 
-import com.gestimmo.metier.exceptions.AppDataException;
+import com.gestimmo.metier.exceptions.AppliDataException;
 
 public class Bien {
 
@@ -52,9 +52,9 @@ public class Bien {
 		return ville;
 	}
 
-	public void setNbPieces(int nombreDePiece) throws AppDataException {
+	public void setNbPieces(int nombreDePiece) throws AppliDataException {
 		if (nombreDePiece < 1)
-			throw new AppDataException();
+			throw new AppliDataException();
 		nbPieces = nombreDePiece;
 	}
 
