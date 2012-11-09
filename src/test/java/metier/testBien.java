@@ -7,9 +7,14 @@ import com.gestimmo.metier.exceptions.AppDataException;
 
 import com.gestimmo.metier.model.Bien;
 import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
 public class testBien extends TestCase {
 	 Bien unBien;
+
+	public static TestSuite suite() {
+		return new TestSuite(testBien.class);
+	}
 
 	public void setUp(){
 		unBien = new Bien();
