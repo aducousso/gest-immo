@@ -1,6 +1,6 @@
 package com.gestimmo.metier.exceptions;
 
-public abstract class ApplicationException extends RuntimeException {
+public class ApplicationException extends RuntimeException {
 	public ApplicationException() {
 	}
 
