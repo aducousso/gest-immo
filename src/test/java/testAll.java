@@ -14,9 +14,7 @@ public final class testAll extends TestCase {
 
 	public static TestSuite suite() {
 		final TestSuite suite = new TestSuite();
-
 		suite.addTest(testBien.suite());
-
 		return suite;
 	}
 
