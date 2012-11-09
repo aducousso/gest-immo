@@ -1,6 +1,6 @@
 package com.gestimmo.metier.dao;
 
-import com.gestimmo.metier.dao.exceptions.DataException;
+import com.gestimmo.metier.exceptions.ApplicationException;
 import com.gestimmo.serveur.processes.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -19,7 +19,7 @@ public class GenericDAO {
 		return session;
 	}
 
-	public void saveOrUpdate(final Object objetConcernee) throws DataException {
+	public void saveOrUpdate(final Object objetConcernee) throws ApplicationException {
 		try {
 			session.saveOrUpdate(objetConcernee);
 		} catch (final HibernateException e) {
@@ -27,7 +27,7 @@ public class GenericDAO {
 		}
 	}
 
-	public void delete(final Object objetConcernee) throws DataException {
+	public void delete(final Object objetConcernee) throws ApplicationException {
 		try {
 			session.delete(objetConcernee);
 		} catch (final HibernateException e) {
@@ -35,7 +35,7 @@ public class GenericDAO {
 		}
 	}
 
-	public Object find(final Class<?> clazz, final Integer objetId) throws DataException {
+	public Object find(final Class<?> clazz, final Integer objetId) throws ApplicationException {
 		Object obj = null;
 
 		try {
@@ -47,7 +47,7 @@ public class GenericDAO {
 		return obj;
 	}
 
-	public List findAll(final String tableName) throws DataException {
+	public List findAll(final String tableName) throws ApplicationException {
 		List objects = null;
 
 		try {
@@ -60,7 +60,7 @@ public class GenericDAO {
 		return objects;
 	}
 
-	public void throwException(final HibernateException e) throws DataException {
-		throw new DataException(e);
+	public void throwException(final HibernateException e) throws ApplicationException {
+		throw new ApplicationException(e);
 	}
 }

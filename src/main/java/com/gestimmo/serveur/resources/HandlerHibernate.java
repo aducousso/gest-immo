@@ -1,6 +1,6 @@
 package com.gestimmo.serveur.resources;
 
-import com.gestimmo.metier.dao.exceptions.DataException;
+import com.gestimmo.metier.exceptions.ApplicationException;
 import com.gestimmo.serveur.processes.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -30,7 +30,7 @@ public class HandlerHibernate extends Filter {
 	protected void afterHandle(final Request request, final Response response) {
 		try {
 			transactionEncours.commit();
-		} catch (final DataException e) {
+		} catch (final ApplicationException e) {
 			System.out.println(e);
 			transactionEncours.rollback();
 		}
