@@ -17,7 +17,5 @@ public class testBien extends TestCase {
 
 	}
 
-	public void testOuiii() {
-		assertTrue(true);
-	}
+	
 }
