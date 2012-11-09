@@ -2,13 +2,13 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import metier.testBien;
 
-public final class testAll extends TestCase {
+public final class AllTestCase extends TestCase {
 
-	public testAll() {
+	public AllTestCase() {
 		super();
 	}
 
-	public testAll(final String s) {
+	public AllTestCase(final String s) {
 		super(s);
 	}
 
