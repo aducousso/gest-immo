@@ -54,7 +54,7 @@ public class Bien {
 
 	public void setNbPieces(int nombreDePiece) throws AppliDataException {
 		if (nombreDePiece < 1)
-			throw new AppliDataException();
+			throw new AppliDataException("Le nombre de pièce ne peut-être inférieur à 1.");
 		nbPieces = nombreDePiece;
 	}
 
