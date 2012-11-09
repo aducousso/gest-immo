@@ -1,13 +1,9 @@
 package metier;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-import java.util.GregorianCalendar;
-
-import org.hamcrest.collection.IsIn;
-import org.hamcrest.number.IsGreaterThan;
+import com.gestimmo.metier.exceptions.AppDataException;
 
 import com.gestimmo.metier.model.Bien;
 import junit.framework.TestCase;
@@ -53,9 +49,12 @@ public class testBien extends TestCase {
 		assertThat(unBien.getNbPieces(), is(1));
 	}
 	
-	public void testNbPiecesPas0(){
-		unBien.setNbPieces(1);
-		assertThat(unBien.getNbPieces(), matcher)
+	public void testNbPiecesPas0() {
+		try {
+			unBien.setNbPieces(0);
+			fail("Impossible");
+		} catch (AppDataException e) {
+		}
 	}
 }
 
