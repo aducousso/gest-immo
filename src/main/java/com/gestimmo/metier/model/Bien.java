@@ -2,6 +2,8 @@ package com.gestimmo.metier.model;
 
 import com.gestimmo.metier.exceptions.AppliDataException;
 
+import java.util.ArrayList;
+
 public class Bien {
 
 	private double surface;
@@ -19,7 +21,11 @@ public class Bien {
 		return surface;
 	}
 
-	public void setEnergie(char nouvelleEnergie) {
+	public void setEnergie(char nouvelleEnergie) throws AppliDataException {
+		ArrayList<String> energiesValides = new ArrayList<String>() {{add("A"); add("B"); add("C"); add("D"); add("E"); add("F"); add("G");}};
+
+		if (!energiesValides.contains(String.valueOf(nouvelleEnergie)))
+			throw new AppliDataException("Energie non valide.");
 		energie = nouvelleEnergie;
 	}
 
@@ -54,7 +60,7 @@ public class Bien {
 
 	public void setNbPieces(int nombreDePiece) throws AppliDataException {
 		if (nombreDePiece < 1)
-			throw new AppliDataException("Le nombre de pièce ne peut-être inférieur à 1.");
+			throw new AppliDataException("Le nombre de pièces ne peut-être inférieur à 1.");
 		nbPieces = nombreDePiece;
 	}
 

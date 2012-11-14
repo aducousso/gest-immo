@@ -33,6 +33,14 @@ public class testBien extends TestCase {
 		unBien.setEnergie('A');
 		assertThat(unBien.getEnergie(), is('A'));
 	}
+
+	public void testNoteEnergieDoitEtreValide() {
+		try {
+			unBien.setEnergie('Z');
+			fail("Impossible d'avoir une énergie notée Z.");
+		} catch (AppliDataException e) {
+		}
+	}
 	
 	public void testAdresse(){
 		unBien.setAdresse("adresse");
@@ -57,7 +65,7 @@ public class testBien extends TestCase {
 	public void testNbPiecesPas0() {
 		try {
 			unBien.setNbPieces(0);
-			fail("Impossible");
+			fail("Impossible d'obtenir aucune pièces.");
 		} catch (AppliDataException e) {
 		}
 	}
