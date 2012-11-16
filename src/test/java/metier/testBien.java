@@ -3,6 +3,9 @@ package metier;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+import org.hamcrest.core.IsNot;
+import org.hibernate.hql.internal.ast.tree.IsNotNullLogicOperatorNode;
+
 import com.gestimmo.metier.exceptions.AppliDataException;
 
 import com.gestimmo.metier.model.Bien;
@@ -69,6 +72,22 @@ public class testBien extends TestCase {
 		} catch (AppliDataException e) {
 		}
 	}
+	
+	public void testGarage() {
+		unBien.setGarage(10);
+		assertThat(unBien.getGarage(), is(10));
+	}
+	
+	public void testVeranda() {
+		unBien.setVeranda(20);
+		assertThat(unBien.getVeranda(),is(20));
+	}
+	public void testTypeBien(){
+		
+		assertNotNull(unBien.getType());
+	}
+	
+	
 }
 
 	

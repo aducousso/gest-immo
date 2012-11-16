@@ -11,7 +11,9 @@ public class Bien {
 	private String adresse;
 	private String codePostal;
 	private String ville;
+	private int tailleGarage;
 	private int nbPieces;
+	private int tailleVeranda;
 
 	public void setSurface(double nouveleSurface) {
 		surface = nouveleSurface;
@@ -67,4 +69,30 @@ public class Bien {
 	public Integer getNbPieces() {
 		return nbPieces;
 	}
+
+	public void setGarage(int tailleGarage) {
+		this.tailleGarage = tailleGarage;
+		
+	}
+
+	public Integer getGarage() {
+		// TODO Auto-generated method stub
+		return tailleGarage;
+	}
+
+	public void setVeranda(int tailleVeranda) {
+		this.tailleVeranda=tailleVeranda;
+		
+	}
+
+	public Integer getVeranda() {
+		// TODO Auto-generated method stub
+		return tailleVeranda;
+	}
+
+	public Object getType() {
+		// TODO Auto-generated method stub
+		return new Object();
+	}
+	
 }
