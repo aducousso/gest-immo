@@ -5,6 +5,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.hamcrest.core.IsNot;
 import org.hibernate.hql.internal.ast.tree.IsNotNullLogicOperatorNode;
+import org.omg.CosNaming.IstringHelper;
 
 import com.gestimmo.metier.exceptions.AppliDataException;
 
@@ -82,9 +83,33 @@ public class testBien extends TestCase {
 		unBien.setVeranda(20);
 		assertThat(unBien.getVeranda(),is(20));
 	}
+	
 	public void testTypeBien(){
 		
 		assertNotNull(unBien.getType());
+	}
+
+	
+	public void testPiscine() {
+		unBien.setPiscine(true);
+		assertThat(unBien.existePiscine(),is(true));
+	}
+
+	
+	public void testDoubleVitrage() {
+		unBien.setDoubleVitrage(true);
+		assertThat(unBien.existeDoubleVitrage(),is(true));
+	}
+
+	
+	public void testCheminee() {
+		unBien.setCheminee(true);
+		assertThat(unBien.existeCheminee(),is(true));
+	}
+	
+	public void testTerrasse() {
+		unBien.setTerrasse(45);
+		assertThat(unBien.getTerrasse(),is(45));
 	}
 	
 	
