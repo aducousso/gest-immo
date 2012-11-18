@@ -27,7 +27,7 @@ public class Mainapplication extends Application {
 		attachRessources(router);
 
 		router.attachDefault(DefaultResource.class);
-		router.attach("/bien", BienResource.class);
+		router.attach("/biens", BienResource.class);
 		//hibernateHandling(router, "/connex", ConnexionRessource.class);
 
 		return router;

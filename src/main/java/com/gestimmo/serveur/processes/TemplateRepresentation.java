@@ -8,6 +8,7 @@ import org.restlet.representation.OutputRepresentation;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.List;
 import java.util.Map;
 
 public class TemplateRepresentation extends OutputRepresentation {
@@ -36,6 +37,12 @@ public class TemplateRepresentation extends OutputRepresentation {
 
 	public TemplateRepresentation with(final Map<String, Object> data) {
 		getDataModel().putAll(data);
+		return this;
+	}
+
+
+	public TemplateRepresentation with(final List<?> biens) {
+		getDataModel().putAll((Map<? extends String, ? extends Object>) biens);
 		return this;
 	}
 

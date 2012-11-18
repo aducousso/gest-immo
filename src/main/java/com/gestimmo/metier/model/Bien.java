@@ -7,13 +7,21 @@ import java.util.ArrayList;
 public class Bien {
 
 	private double surface;
+	
 	private char energie;
+	
 	private String adresse;
 	private String codePostal;
 	private String ville;
+	
 	private int tailleGarage;
 	private int nbPieces;
 	private int tailleVeranda;
+	private int surfaceTerrasse;
+	
+	private boolean piscine;
+	private boolean doubleVitrage;
+	private boolean cheminee;
 
 	public void setSurface(double nouveleSurface) {
 		surface = nouveleSurface;
@@ -93,6 +101,47 @@ public class Bien {
 	public Object getType() {
 		// TODO Auto-generated method stub
 		return new Object();
+	}
+
+	public void setPiscine(boolean existe) {
+		this.piscine = existe;
+		
+	}
+
+	public Boolean existePiscine() {
+		// TODO Auto-generated method stub
+		return this.piscine;
+	}
+
+	public void setDoubleVitrage(boolean existe) {
+		// TODO Auto-generated method stub
+		this.doubleVitrage = existe;
+		
+	}
+
+	public Boolean existeDoubleVitrage() {
+		// TODO Auto-generated method stub
+		return this.doubleVitrage;
+	}
+
+	public void setCheminee(boolean existe) {
+		// TODO Auto-generated method stub
+		this.cheminee = existe;
+	}
+
+	public Boolean existeCheminee() {
+		// TODO Auto-generated method stub
+		return this.cheminee;
+	}
+
+	public void setTerrasse(int surface) {
+		// TODO Auto-generated method stub
+		this.surfaceTerrasse = surface;
+	}
+
+	public Integer getTerrasse() {
+		// TODO Auto-generated method stub
+		return this.surfaceTerrasse;
 	}
 	
 }
